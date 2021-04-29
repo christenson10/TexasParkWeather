@@ -3,7 +3,7 @@ var dropL = document.querySelector("#drop-list")
 
 //Variable to fetch weather info
 function myFunction() {
-    fetch("https://api.openweathermap.org/data/2.5/weather?q={Flint}&appid=api_key=144038776569eb157fc421eeaef8f89e")
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=Detroit&appid=662a8e54640cc40085727afa832a2eb6")
     // api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
     
     .then(function(response) {
