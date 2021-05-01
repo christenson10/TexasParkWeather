@@ -1,5 +1,5 @@
 //Variables for section. Indentify selected location, current temp
-var dropL = document.querySelector("#drop-list")
+var dropL = document.querySelector("#searchField")
 var cityName = dropL.value
 
 //Change event for city drop down, add event listener to run myFunction
