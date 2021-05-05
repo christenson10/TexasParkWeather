@@ -6,6 +6,7 @@ dropL.addEventListener("change", dropdownHandler)
 
 //Variable to fetch weather info
 function dropdownHandler(event) {
+    document.querySelector("#clearDiv").innerHTML = "";
     console.log(event.target.value);
     var cityName = event.target.value;
     var queryUrl = ("https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=662a8e54640cc40085727afa832a2eb6&units=imperial")

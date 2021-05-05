@@ -1,4 +1,5 @@
 var dropL = document.querySelector(".search");
+var storageArray = [];
 
 dropL.addEventListener("change", myfunction);
 
@@ -18,27 +19,29 @@ function myfunction(event) {
 
     let hName = response.data[0].fullName;
     var obj = [hName,]
-    localStorage.setItem("history", JSON.stringify(obj));
-    let itemDiv = document.querySelector("#recent-search");
-    let getIt = localStorage.getItem(obj);
-    itemDiv.innerHTML = getIt
+
+    storageArray.push(obj);
+    localStorage.setItem("history", JSON.stringify(storageArray));
+    var recentSearch = JSON.parse(localStorage.getItem("history"));
+    var displayHistory = document.querySelector("#recent-search");
+    displayHistory.textContent = `${recentSearch}`;
 
     const cty = response.data[0].addresses[0].city;
     const citName = response.data[0].name;
-    const imgUrl = response.data[0].images[0].url
+    const imgUrl = response.data[0].images[0].url;
     const lin1 = response.data[0].addresses[0].line1;
     const postalC = response.data[0].addresses[0].postalCode;
     const stateC = response.data[0].addresses[0].stateCode;
 
     const city = document.querySelector("#city");
-    const cityName = document.querySelector("#cityname")
-    const imag = document.querySelector("#img")
+    const cityName = document.querySelector("#cityname");
+    const imag = document.querySelector("#img");
     const line1 = document.querySelector("#line1");
     const pc = document.querySelector("#pc");
     const sc = document.querySelector("#sc");
 
     city.textContent = `${cty}`;
-    cityName.textContent = `${citName}`
+    cityName.textContent = `${citName}`;
     imag.src = `${imgUrl}`;
     line1.textContent = `${lin1}`;
     pc.textContent = `${postalC}`;
@@ -53,6 +56,8 @@ function myfunction(event) {
         return response.json();
     })
     .then(function(response) {
+        document.querySelector(".tempDiv").innerHTML = "";
+        document.querySelector(".weatherDiv").innerHTML = "";
         console.log(response);
         var temp = response.main.temp;
         var weather = response.weather[0].main;
