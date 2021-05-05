@@ -1,14 +1,69 @@
-var dropL = document.querySelector("#drop-list");
+var dropL = document.querySelector(".search");
 
-function myfunction() {
-  fetch("https://developer.nps.gov/api/v1/parks?parkCode=Texas&stateCode=Texas&limit=50&start=1&q=Texas&api_key=7XBVh3JlfEvfScseNuuSZfPdln6Rdn8jH5v7fFy7")
+dropL.addEventListener("change", myfunction);
+
+function myfunction(event) {
+  console.log(event.target.value);
+  const dropL = event.target.value;
+  fetch("https://developer.nps.gov/api/v1/parks?parkCode=" + dropL + "&stateCode=Tx&limit=50&start=0&api_key=7XBVh3JlfEvfScseNuuSZfPdln6Rdn8jH5v7fFy7", {
+      headers: {
+        "Content-Type": "application/json"
+      }
+  })
   .then(function(response) {
     return response.json();
   })
   .then(function(response) {
     console.log(response);
-  })
-}
 
-  myfunction();
+    const cty = response.data[0].addresses[0].city;
+    const citName = response.data[0].name;
+    const imgUrl = response.data[0].images[0].url
+    const lin1 = response.data[0].addresses[0].line1;
+    const postalC = response.data[0].addresses[0].postalCode;
+    const stateC = response.data[0].addresses[0].stateCode;
+
+    const city = document.querySelector("#city");
+    const cityName = document.querySelector("#cityname")
+    const imag = document.querySelector("#img")
+    const line1 = document.querySelector("#line1");
+    const pc = document.querySelector("#pc");
+    const sc = document.querySelector("#sc");
+
+    city.textContent = `${cty}`;
+    cityName.textContent = `${citName}`
+    imag.src = `${imgUrl}`;
+    line1.textContent = `${lin1}`;
+    pc.textContent = `${postalC}`;
+    sc.textContent = `${stateC}`;
+
+    fetch("https://api.openweathermap.org/data/2.5/weather?zip="+ postalC +",us&appid=662a8e54640cc40085727afa832a2eb6&units=imperial")
+    // api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+    
+    //zip = response.data[0].addresses[0].postalCode
+
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(response) {
+        console.log(response);
+        var temp = response.main.temp;
+        var weather = response.weather[0].main;
+
+        var currentWeather = document.createElement('p');
+        currentWeather.innerText = weather;
+        const weatherLocation = document.querySelector(".weatherDiv")
+        weatherLocation.appendChild(currentWeather)
+
+        var currentTemp = document.createElement('p');
+        currentTemp.innerText = temp;
+        const tempLocation = document.querySelector(".tempDiv")
+        tempLocation.appendChild(currentTemp)
+
+    })
+
+
+
+  }
+    )}
 
