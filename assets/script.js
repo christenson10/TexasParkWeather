@@ -19,6 +19,7 @@ function myfunction(event) {
 
     let hName = response.data[0].fullName;
     var obj = [hName,]
+
     storageArray.push(obj);
     localStorage.setItem("history", JSON.stringify(storageArray));
     var recentSearch = JSON.parse(localStorage.getItem("history"));
