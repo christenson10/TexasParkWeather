@@ -53,6 +53,10 @@ header h1 {
     clear: both;
 }
 
+#img {
+    height: 200px;
+    width: 300px;
+}
 
 footer {
     background-color: green;
