@@ -16,6 +16,10 @@ function myfunction(event) {
   .then(function(response) {
     console.log(response);
 
+    let hName = response.data[0].fullName;
+    var obj = [hName,]
+    localStorage.setItem("history", JSON.stringify(obj));
+
     const cty = response.data[0].addresses[0].city;
     const citName = response.data[0].name;
     const imgUrl = response.data[0].images[0].url
