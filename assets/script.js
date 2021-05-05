@@ -19,6 +19,9 @@ function myfunction(event) {
     let hName = response.data[0].fullName;
     var obj = [hName,]
     localStorage.setItem("history", JSON.stringify(obj));
+    let itemDiv = document.querySelector("#recent-search");
+    let getIt = localStorage.getItem(obj);
+    itemDiv.innerHTML = getIt
 
     const cty = response.data[0].addresses[0].city;
     const citName = response.data[0].name;
