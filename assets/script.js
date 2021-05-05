@@ -50,6 +50,8 @@ function myfunction(event) {
         return response.json();
     })
     .then(function(response) {
+        document.querySelector(".tempDiv").innerHTML = "";
+        document.querySelector(".weatherDiv").innerHTML = "";
         console.log(response);
         var temp = response.main.temp;
         var weather = response.weather[0].main;
