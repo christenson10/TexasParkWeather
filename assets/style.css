@@ -5,6 +5,7 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color:tan;
+    flex-wrap: wrap;
 }
 
 /* Apply Styles to Header*/
@@ -32,18 +33,23 @@ header h1 {
     background-image: url(./fishing-garner-state-park.jpg);
     background-size: cover;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .column {
     float: left;
-    width: 33%;
-    padding: 10px;
+    width: 32%;
+    padding: 15px;
     height: 400px;
     flex-wrap: wrap;
     color: seashell;
     margin-top: 20px;
     background-color: green;
-    margin-right: 10px;
+    margin-right: 12px;
+    margin-left: 12px;
+    align-items: center;
 }    
 
   
@@ -51,6 +57,11 @@ header h1 {
     content: "";
     display: table;
     clear: both;
+}
+
+#img {
+    height: 200px;
+    width: 300px;
 }
 
 
