@@ -57,9 +57,13 @@ function myfunction(event) {
     .then(function(response) {
         document.querySelector(".tempDiv").innerHTML = "";
         document.querySelector(".weatherDiv").innerHTML = "";
+        document.querySelector(".humidityDiv").innerHTML = "";
+        document.querySelector(".windDiv").innerHTML = "";
         console.log(response);
         var temp = response.main.temp;
         var weather = response.weather[0].main;
+        var humidity = response.main.humidity;
+        var wind = response.wind.speed;
 
         var currentWeather = document.createElement('p');
         currentWeather.innerText = weather;
@@ -70,6 +74,23 @@ function myfunction(event) {
         currentTemp.innerText = temp;
         const tempLocation = document.querySelector(".tempDiv")
         tempLocation.appendChild(currentTemp)
+
+        var currentHumidity = document.createElement('p');
+        currentHumidity.innerText = humidity;
+        const humidityLocation = document.querySelector(".humidityDiv")
+        humidityLocation.appendChild(currentHumidity)
+
+        var currentWind = document.createElement('p');
+        currentWind.innerText = wind;
+        const windLocation = document.querySelector(".windDiv")
+        windLocation.appendChild(currentWind)
+
+        currentTemp.textContent = `Temp: ${temp} F`;
+        currentWeather.textContent = `Weather: ${weather}`;
+        currentHumidity.textContent = `Humidity: ${humidity}%`;
+        currentWind.textContent = `Wind: ${wind} MPH`;
+
+        // Varname.textcontent = `${temp} F `
 
     })
 
