@@ -89,8 +89,8 @@ function myfunction(event) {
         var weatherIcon = (`https://openweathermap.org/img/w/${iconInput}.png`);
         const iconImg = document.querySelector(".imgDiv")
         iconImg.setAttribute("style", "display: initial");
-        iconImg.setAttribute("height", "50px");
-        iconImg.setAttribute("width", "50px");
+        iconImg.setAttribute("height", "80px");
+        iconImg.setAttribute("width", "80px");
         iconImg.src = weatherIcon;
 
         currentTemp.textContent = `Temp: ${temp} F`;
@@ -99,8 +99,6 @@ function myfunction(event) {
         currentWind.textContent = `Wind: ${wind} MPH`;
 
     })
-
-
 
   }
     )}
