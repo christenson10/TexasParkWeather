@@ -85,12 +85,24 @@ function myfunction(event) {
         const windLocation = document.querySelector(".windDiv")
         windLocation.appendChild(currentWind)
 
+        var iconInput = response.weather[0].icon;
+        var weatherIcon = (`https://openweathermap.org/img/w/${iconInput}.png`);
+        const iconImg = document.querySelector(".imgDiv")
+        iconImg.setAttribute("style", "display: initial");
+        iconImg.setAttribute("height", "50px");
+        iconImg.setAttribute("width", "50px");
+        iconImg.src = weatherIcon;
+
+
         currentTemp.textContent = `Temp: ${temp} F`;
         currentWeather.textContent = `Weather: ${weather}`;
         currentHumidity.textContent = `Humidity: ${humidity}%`;
         currentWind.textContent = `Wind: ${wind} MPH`;
 
-        // Varname.textcontent = `${temp} F `
+        // const icon = response.weather[0].icon
+        // const iconUrl = https://openweathermap.org/img/wn/${icon}@2x.png;
+        // const iconImg = document.querySelector('#weather-icon');
+        // iconImg.src = iconUrl;
 
     })
 
