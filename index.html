@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Texas Parks Weather</title>
     <link rel="stylesheet" href="./assets/style.css"/>
   </head>
@@ -13,7 +14,7 @@
   <body>
     <div class="hero"></div>
     <div class="row">
-      <div class="column">
+      <div class="col s12 l4">
         <h2>Search</h2>
         <div class="input-group justify-content-center mt-5">
           <select id="searchField" class="search">
@@ -38,33 +39,34 @@
         </div>
         <div class="search-results">
             <h2>Recent Searches:</h2>
-             <li id="recent-search"></li>
+            <p><strong></strong> <li><span id="recent-search">
+            </li>
+            </span></p>
         </div>
       </div>
-      <div class="column">
-        <div>
-            <ul id="am" class="column">
-              </ul>
-          </div>
-          <h2>Park</h2>
-          <img src="data:image/gif;base64,R0lGODlhAQABAPcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAP8ALAAAAAABAAEAAAgEAP8FBAA7"
-           id="img">
+      <div class="col s12 l4">
+        <h2>Park</h2>
+        <img id="img">
         <div id="cityname"></div>
         <div id="city"></div>
         <div id="line1"></div>
         <div id="pc"></div>
         <div id="sc"></div>
       </div>
-      <div class="column">
-        <h2>Weather</h2>
-        <div class="weatherDiv"></div>
+      <div class="col s12 l4">
+        <h2>Weather:</h2>
         <div class="tempDiv"></div>
+        <div class="weatherDiv"></div>
+        <div class="humidityDiv"></div>
+        <div class="windDiv"></div>
+        <img class="imgDiv"></div>
       </div>
     </div>
-
     <footer>
-      <h3>Made By:</h3>
+      <h3>Made By: Alex, Dylan and Reetah</h3>
     </footer>
+      <!-- <script src="assets/localstorage.js"></script> -->
+
     <script src="./assets/script.js"></script>
   </body>
 </html>
