@@ -40,8 +40,8 @@ function myfunction(event) {
 //       actList.appendChild(liEl);
     //}
     //})
-    .then(function (response) {
-      console.log(response);
+    //.then(function (response) {
+      //console.log(response);
 
       let hName = response.data[0].fullName;
       var obj = [hName];
