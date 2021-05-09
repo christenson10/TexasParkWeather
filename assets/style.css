@@ -18,6 +18,7 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: column;
+    align-items: center;
 }
 
 header h1 {
@@ -27,8 +28,8 @@ header h1 {
 /* Apply Styles to Body */
 
 .hero {
-    height: 800px;
-    width: 100%;
+    height: 60vh;
+    width: 45vw;
     margin-bottom: 25px;
     background-image: url(./fishing-garner-state-park.jpg);
     background-size: cover;
@@ -36,22 +37,30 @@ header h1 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-left: 25%;
+    margin-right: 25%;
+    align-items: center;
+    margin-top: 25px;
 }
 
-.column {
-    float: left;
-    width: 32%;
+.col {
+    /* float: left; */
+    /* width: 32%; */
     padding: 15px;
     height: 400px;
     flex-wrap: wrap;
     color: seashell;
     margin-top: 20px;
     background-color: green;
-    margin-right: 12px;
-    margin-left: 12px;
+    /* margin-right: 12px; */
+    /* margin-left: 12px; */
     align-items: center;
+    border: 12px solid tan;
 }    
 
+.search {
+    display: inline;
+}
   
 .row:after {
     content: "";
