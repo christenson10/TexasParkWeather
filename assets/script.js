@@ -43,6 +43,16 @@ function myfunction(event) {
         displayHistory.appendChild(searchResults);
       }}
 
+      var activities = response.data[0].activities;
+    console.log(activities)
+    var actList = document.querySelector("#am");
+    actList.innerHTML = "";
+    for (i = 0; i < activities.length; i++) {
+      let actName = activities[i].name;
+      var liEl = document.createElement("li");
+      liEl.textContent = actName;
+      actList.appendChild(liEl);
+    }
       const cty = response.data[0].addresses[0].city;
       const citName = response.data[0].name;
       const imgUrl = response.data[0].images[0].url;
