@@ -44,16 +44,11 @@ header h1 {
 }
 
 .col {
-    /* float: left; */
-    /* width: 32%; */
     padding: 15px;
-    /*height: 400px;*/
     flex-wrap: wrap;
     color: seashell;
     margin-top: 20px;
     background-color: green;
-    /* margin-right: 12px; */
-    /* margin-left: 12px; */
     align-items: center;
     border: 12px solid tan;
 }    
