@@ -4,44 +4,23 @@ var storageArray = [];
 dropL.addEventListener("change", myfunction);
 
 function myfunction(event) {
-  console.log(event);
+  console.log(event.target.value);
   const dropL = event.target.value;
   fetch(
     "https://developer.nps.gov/api/v1/parks?parkCode=" +
       dropL +
       "&stateCode=Tx&limit=50&start=0&api_key=7XBVh3JlfEvfScseNuuSZfPdln6Rdn8jH5v7fFy7",
     {
-      headers: {"Content-Type": "application/json"
-      }
-  })
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(response) {
-    console.log(response);
-
-    //let hName = response.data[0].fullName
-    //var obj = hName
-
-//     storageArray.push(obj);
-//     localStorage.setItem("history", JSON.stringify(storageArray));
-//     var recentSearch = JSON.parse(localStorage.getItem("history"));
-//     var displayHistory = document.querySelector("#recent-search");
-//     displayHistory.textContent = `${recentSearch}`;
-
-//     var activities = response.data[0].activities;
-//     console.log(activities)
-//     var actList = document.querySelector("#am");
-//     actList.innerHTML = "";
-//     for (i = 0; i < activities.length; i++) {
-//       let actName = activities[i].name;
-//       var liEl = document.createElement("li");
-//       liEl.textContent = actName;
-//       actList.appendChild(liEl);
-    //}
-    //})
-    //.then(function (response) {
-      //console.log(response);
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (response) {
+      console.log(response);
 
       let hName = response.data[0].fullName;
       var obj = [hName];
@@ -64,16 +43,6 @@ function myfunction(event) {
         displayHistory.appendChild(searchResults);
       }}
 
-      var activities = response.data[0].activities;
-      console.log(activities)
-      var actList = document.querySelector("#am");
-      actList.innerHTML = "";
-      for (i = 0; i < activities.length; i++) {
-      let actName = activities[i].name;
-      var liEl = document.createElement("li");
-      liEl.textContent = actName;
-      actList.appendChild(liEl);
-        
       const cty = response.data[0].addresses[0].city;
       const citName = response.data[0].name;
       const imgUrl = response.data[0].images[0].url;
